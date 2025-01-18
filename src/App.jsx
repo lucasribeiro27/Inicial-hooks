@@ -6,6 +6,7 @@ export default function App() {
     <main>
       <Musico/>
       <Example/>
+      <MudarCor/>
     </main>
   );
 }
@@ -39,3 +40,17 @@ function Example() {
   );
 }
 
+function MudarCor(){
+  const [cor, setCor] = useState("blue");
+
+  const outraCor =() => {
+    setCor ("red")
+  };
+  return(
+    <div>
+      <h2 style={{color: cor}}>Boa noite</h2>
+      <button onClick={outraCor}>Mudar cor de texto</button>
+      <button onClick={()=> setCor ("blue")}>Voltar cor de texto</button>
+    </div>
+  )
+}
